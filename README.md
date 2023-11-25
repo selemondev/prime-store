@@ -1,75 +1,72 @@
-# Nuxt 3 Minimal Starter
+# Shopping Cart Project with Nuxt 3, PrimeVue, and Pinia
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a sample shopping cart project built with Nuxt 3, PrimeVue, and Pinia. The project allows users to browse products, add them to the cart, and proceed through the checkout process.
 
-## Setup
 
-Make sure to install the dependencies:
+## Getting Started
 
-```bash
-# npm
-npm install
+### Prerequisites
 
-# pnpm
-pnpm install
+- Node.js 16+ and npm | yarn | pnpm | bun installed on your local machine.
 
-# yarn
-yarn install
+### Installation
 
-# bun
-bun install
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/selemondev/prime-store.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd prime-store
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+4. Run the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see the application.
+
+## Project Structure
+
+```
+shopping-cart/
+|-- assets/
+|-- components/
+|-- layouts/
+|-- pages/
+|-- plugins/
+|-- public/
+|-- server/
+|-- stores/
+|-- types/
+|-- .env/
+|-- .gitignore
+|-- .npmrc/
+|-- app.vue/
+|-- nuxt.config.ts
+|-- package.json
+|-- README.md
+|-- tailwind.config.js/
+|-- tsconfig.json/
 ```
 
-## Development Server
+## Technologies Used
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [Nuxt 3](https://nuxt.com/)
+- [PrimeVue](https://primevue.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [TailwindCss](https://tailwindcss.nuxtjs.org/)
+- [Nuxt Google Fonts](https://google-fonts.nuxtjs.org/)
+- [Vueuse](https://vueuse.org/)
+- [Nuxt-Icon](https://github.com/nuxt-modules/icon)
