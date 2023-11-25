@@ -5,5 +5,6 @@ productStore.fetchProducts()
 <template>
   <NuxtLayout>
     <NuxtPage />
+    <Toaster position="top-right" richColors closeButton />
   </NuxtLayout>
 </template>

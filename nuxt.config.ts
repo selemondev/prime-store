@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
   ],
   googleFonts: {
     families: {
@@ -14,6 +15,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     baseUrl: ''
+  },
+  build: {
+    transpile: ['vue-sonner']
   },
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',

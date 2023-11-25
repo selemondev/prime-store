@@ -4,6 +4,13 @@ const isSidebarOpen = ref(false);
 const handleOpenSidebar = () => {
     isSidebarOpen.value = true;
 };
+
+const handleCloseSidebar = () => {
+    isSidebarOpen.value = false;
+}
+const cartHasProducts = computed(() => {
+    return cartStore.cart.length >= 1
+})
 </script>
 
 <template>
@@ -29,16 +36,20 @@ const handleOpenSidebar = () => {
                 <div>
                     <div class="flex card justify-content-center">
                         <PrimeSidebar v-model:visible="isSidebarOpen" header="My Cart" position="right">
-                            <div class="overflow-y-scroll h-[500px]">
-                                <div v-for="cartProduct in cartStore.cart" :key="cartProduct.id">
-                                    <CartProductCard :id="cartProduct.id" :title="cartProduct.title"
-                                        :description="cartProduct.description" :price="cartProduct.price"
-                                        :category="cartProduct.category" :image="cartProduct.image"
-                                        :rating="cartProduct.rating" />
-                                </div>
+                            <div v-if="!cartHasProducts" class="grid w-full min-h-screen place-items-center">
+                                No products available in the cart
                             </div>
-
-                            <CartProductPaymentDetails />
+                            <div v-else >
+                                <div class="overflow-y-scroll h-[480px]">
+                                    <div v-for="cartProduct in cartStore.cart" :key="cartProduct.id">
+                                        <CartProductCard :id="cartProduct.id" :title="cartProduct.title"
+                                            :description="cartProduct.description" :price="cartProduct.price"
+                                            :category="cartProduct.category" :image="cartProduct.image"
+                                            :rating="cartProduct.rating" />
+                                    </div>
+                                </div>
+                                <CartProductPaymentDetails @close="handleCloseSidebar"/>
+                            </div>
                         </PrimeSidebar>
                     </div>
                 </div>

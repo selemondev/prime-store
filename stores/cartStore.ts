@@ -1,6 +1,6 @@
 import type { Product } from '~/types'
 export const useCartStore = defineStore('cartStore', () => {
-    const cart = ref<Product[]>([]);
+    const cart = useLocalStorage<Product[]>('cart', []);
 
     // total products in the cart
     const totalCartProducts = computed(() => {
@@ -15,7 +15,7 @@ export const useCartStore = defineStore('cartStore', () => {
     // the total price of all the products in the cart
     const totalProductsPrice = computed(() => {
         //@ts-ignore
-        return cart.value.reduce((val, product) => val + product.price * product?.quantity, 0)
+        return cart.value.reduce((val, product) => val + product.price * product?.quantity, 0).toFixed(2)
     });
 
     const addProductToCart = (product: Product) => {
