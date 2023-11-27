@@ -39,8 +39,8 @@ const cartHasProducts = computed(() => {
                             <div v-if="!cartHasProducts" class="grid w-full min-h-screen place-items-center">
                                 No products available in the cart
                             </div>
-                            <div v-else >
-                                <div class="overflow-y-scroll h-[480px]">
+                            <div v-else class="flex flex-col justify-between h-full">
+                                <div class="overflow-y-scroll h-[650px]">
                                     <div v-for="cartProduct in cartStore.cart" :key="cartProduct.id">
                                         <CartProductCard :id="cartProduct.id" :title="cartProduct.title"
                                             :description="cartProduct.description" :price="cartProduct.price"
